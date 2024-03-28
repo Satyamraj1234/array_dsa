@@ -68,24 +68,56 @@ public class ArrayExample {
         }
         return ans;
     }
+    public int firtRepeatingNumber(int[] array){
+        for(int i=0; i<array.length; i++){
+            for(int j=i+1; j<array.length; j++ ){
+                if(array[i]==array[j]){
+                    return array[i];
+                }
+            }
+        }
+        return -1;
+    }
+    public int findMax(int[] array){
+        int max= Integer.MIN_VALUE;
+        for(int i=0; i<array.length; i++){
+            if(array[i]>max){
+                max=array[i];
+            }
+        }
+        return max;
+    }
+    public int secondMax(int[]array){
+        int max = findMax(array);
+        for(int i=0; i<array.length;i++){
+            if(array[i]==max){
+                array[i]=Integer.MIN_VALUE;
+            }
+        }
+        int secondMax=findMax(array);
+        return secondMax;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayExample a= new ArrayExample();
         int[] array=a.creatArray();
-        System.out.println("Enter the number to check the occurrences:");
-        int n = sc.nextInt();
-        int occurrences= a.noOfOccurence( array,n);
-        System.out.println("The number " + n + " occurs " + occurrences + " times in the array.");
+    //     System.out.println("Enter the number to check the occurrences:");
+    //     int n = sc.nextInt();
+    //     int occurrences= a.noOfOccurence( array,n);
+    //     System.out.println("The number " + n + " occurs " + occurrences + " times in the array.");
        
-        System.out.println("last occurence is at index"+ a.lastOccurenceIndex(array, occurrences));
-        System.out.println("enter target sum");
-        int target = sc.nextInt();
-        int targets= a.targetsum(array,target);
-        System.out.println("total no of pairs are "+targets);
-       int unique= a.findUnique(array);
-        System.out.println("unique no is "+unique);
-
+    //     System.out.println("last occurence is at index"+ a.lastOccurenceIndex(array, occurrences));
+    //     System.out.println("enter target sum");
+    //     int target = sc.nextInt();
+    //     int targets= a.targetsum(array,target);
+    //     System.out.println("total no of pairs are "+targets);
+    //    int unique= a.findUnique(array);
+    //     System.out.println("unique no is "+unique);
+     //int firstrepeatingno =a.firtRepeatingNumber(array);
+     //System.out.println("first repeating number is"+firstrepeatingno);
+    int secondmax= a.secondMax(array);
+     System.out.println("seconf maax value of array is "+secondmax);
 
 
     }
