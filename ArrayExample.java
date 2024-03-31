@@ -97,6 +97,39 @@ public class ArrayExample {
         int secondMax=findMax(array);
         return secondMax;
     }
+    public int[] reverseArray(int[]array){
+        int n = array.length;
+        int[] ans = new int[n];
+        int j = 0;
+        for ( int i =n-1; i>=0; i--){
+            ans[j++]=array[i];
+        }
+        return ans;
+
+        
+    }
+    public void printArray(int[]array){
+        for(int i=0; i<array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
+    public void swapArray(int[] array, int i, int j){
+        int temp = array[i];
+            array[i]= array[j];
+            array[j]=temp;
+
+    }
+    public void ReverseArray(int []array){
+        int i =0; 
+        int j = array.length;
+        while ((i<j)) {
+            swapArray(array, i, j);
+            i++;
+            j++;
+            
+        }
+
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -116,8 +149,15 @@ public class ArrayExample {
     //     System.out.println("unique no is "+unique);
      //int firstrepeatingno =a.firtRepeatingNumber(array);
      //System.out.println("first repeating number is"+firstrepeatingno);
-    int secondmax= a.secondMax(array);
-     System.out.println("seconf maax value of array is "+secondmax);
+    //int secondmax= a.secondMax(array);
+     //System.out.println("seconf maax value of array is "+secondmax);
+    //  int[] ans =a.reverseArray(array);
+    //  System.out.println("reversed array are");
+    // a.printArray(ans);
+    // int[] r= a.ReverseArray(array);
+
+    // a.printArray(r);
+
 
 
     }
