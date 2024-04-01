@@ -119,15 +119,16 @@ public class ArrayExample {
             array[j]=temp;
 
     }
-    public void ReverseArray(int []array){
+    public int[] ReverseArray(int []array){
         int i =0; 
-        int j = array.length;
+        int j = array.length-1;
         while ((i<j)) {
             swapArray(array, i, j);
             i++;
-            j++;
+            j--;
             
         }
+        return array;
 
     }
 
@@ -135,28 +136,28 @@ public class ArrayExample {
         Scanner sc = new Scanner(System.in);
         ArrayExample a= new ArrayExample();
         int[] array=a.creatArray();
-    //     System.out.println("Enter the number to check the occurrences:");
-    //     int n = sc.nextInt();
-    //     int occurrences= a.noOfOccurence( array,n);
-    //     System.out.println("The number " + n + " occurs " + occurrences + " times in the array.");
+        System.out.println("Enter the number to check the occurrences:");
+        int n = sc.nextInt();
+        int occurrences= a.noOfOccurence( array,n);
+        System.out.println("The number " + n + " occurs " + occurrences + " times in the array.");
        
-    //     System.out.println("last occurence is at index"+ a.lastOccurenceIndex(array, occurrences));
-    //     System.out.println("enter target sum");
-    //     int target = sc.nextInt();
-    //     int targets= a.targetsum(array,target);
-    //     System.out.println("total no of pairs are "+targets);
-    //    int unique= a.findUnique(array);
-    //     System.out.println("unique no is "+unique);
-     //int firstrepeatingno =a.firtRepeatingNumber(array);
-     //System.out.println("first repeating number is"+firstrepeatingno);
-    //int secondmax= a.secondMax(array);
-     //System.out.println("seconf maax value of array is "+secondmax);
-    //  int[] ans =a.reverseArray(array);
-    //  System.out.println("reversed array are");
-    // a.printArray(ans);
-    // int[] r= a.ReverseArray(array);
+        System.out.println("last occurence is at index"+ a.lastOccurenceIndex(array, occurrences));
+        System.out.println("enter target sum");
+        int target = sc.nextInt();
+        int targets= a.targetsum(array,target);
+        System.out.println("total no of pairs are "+targets);
+       int unique= a.findUnique(array);
+        System.out.println("unique no is "+unique);
+     int firstrepeatingno =a.firtRepeatingNumber(array);
+     System.out.println("first repeating number is"+firstrepeatingno);
+    int secondmax= a.secondMax(array);
+     System.out.println("seconf maax value of array is "+secondmax);
+     int[] ans =a.reverseArray(array);
+     System.out.println("reversed array are");
+    a.printArray(ans);
+     int[] r= a.ReverseArray(array);
 
-    // a.printArray(r);
+     a.printArray(r);
 
 
 
