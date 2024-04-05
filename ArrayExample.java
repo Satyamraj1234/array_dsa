@@ -154,6 +154,51 @@ public class ArrayExample {
 
 
     }
+    public int[] sortbyParity(int[]array){
+        int n=array.length;
+        int left=0;
+        int right =n-1;
+        while (left<right) {
+            if(array[left]%2==1&&array[right]%2==0){
+                swapArray(array, left, right);
+                left++;
+                right--;
+            }
+            if(array[left]%2==0){
+                left++;
+
+            }
+            if(array[right]%2 ==1)
+            right--;
+            
+        }
+        return array;
+    }
+    public int[] sortbysquare(int[] array){
+        int left=0;
+        int right = array.length-1;
+        int [] ans = new int[array.length];
+        int k =0;
+        while (left<=right) {
+            if (Math.abs(array[left])>Math.abs(array[right])) {
+                ans[k++]=array[left]*array[left];
+                left++;
+                
+            }else{
+                ans[k++]=array[right]*array[right];
+                right--;
+            }
+            
+        }
+        return ans;
+
+    }
+    public int[] prefixsum(int[]array){
+        for(int i=1; i<array.length; i++){
+            array[i]=array[i]+array[i-1];
+        }
+        return array;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -196,10 +241,17 @@ public class ArrayExample {
     //     query--;
         
     //  }
-    System.out.println("enter k");
-    int  k= sc.nextInt();
-    int[] rotate=a.rotateArray(array, k);
-    a.printArray(rotate);
+    // System.out.println("enter k");
+    // int  k= sc.nextInt();
+    // int[] rotate=a.rotateArray(array, k);
+    // a.printArray(rotate);
+    //int[]b=a.sortbyParity(array);
+   // a.printArray(b);
+ // int[] srtbysqr= a.sortbysquare(array);
+  //a.ReverseArray(srtbysqr);
+  // a.printArray(srtbysqr);
+  int[] prifixsum= a.prefixsum(array);
+   a.printArray(prifixsum);
 
 
 
